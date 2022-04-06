@@ -1,4 +1,4 @@
-def array_min(array)
+def array_min(array) # Минимум
   min = 100
   for item in array do
     if min > item  then
@@ -8,7 +8,7 @@ def array_min(array)
   min
 end
 
-def array_max(array)
+def array_max(array) # Максимум
   max = 0
   for item in array do
     if max < item  then
@@ -18,7 +18,7 @@ def array_max(array)
   max
 end
 
-def array_sum(array)
+def array_sum(array) # Сумма
   sum = 0
   for item in array do
     sum += item
@@ -26,7 +26,7 @@ def array_sum(array)
   sum
 end
 
-def array_mult(array)
+def array_mult(array) # Произведение
   mult = 1
   for item in array do
     mult *= item
@@ -40,22 +40,22 @@ def main
     2) Минимум
     3) Максимум
     4) Произведение"
-    my_method = gets.chomp
+    my_method = ARGV[0]
 
     puts "Откуда взять массив?
     1) Клавиатура
     2) Файл"
-    my_option = gets.chomp
+    my_option = ARGV[1]
 
     my_arr = Array.new
 
     case my_option
     when "1"
       puts "Пишете массив через пробел"
-        my_arr = gets.chomp.split.map(&:to_i)
+        my_arr = STDIN.gets.chomp.split.map(&:to_i)
     when "2"
         puts "Нужен адрес файла" 
-        my_address = gets.chomp
+        my_address = STDIN.gets.chomp
         my_str = IO.read(my_address) # C:\Users\[name_pc_user]\....\[name file].txt
         my_arr = my_str.split.map(&:to_i)
     else
@@ -77,3 +77,17 @@ def main
 end
 
 main
+
+# срочка с мапом, ввод всех аргументов программы, 5 способов добавить элементы масива, на 8 элемента записать.
+# map-это класс Arrae
+
+# split- клфсс String
+# по индексу, без очереди, очередь
+
+#array = %w(a b c)
+#array.map.with_index { |ch, idx| [ch, idx] }
+# [["a", 0], ["b", 1], ["c", 2]]
+
+
+basket << "apple"
+basket.push("melon")
